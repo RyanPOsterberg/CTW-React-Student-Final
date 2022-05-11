@@ -6,7 +6,7 @@ import "./ErrorModal.css";
 const ErrorModal = props => {
     return (
         <div>
-            <div className="backdrop" />
+            <div className="backdrop" onClick={props.onHandleError} />
             <div className="modal">
                 <Card>
                     <header className="header">
@@ -16,7 +16,7 @@ const ErrorModal = props => {
                         <p>{props.message}</p>
                     </div>
                     <footer className="actions">
-                        <Button>Click</Button>
+                        <Button clickHandler={props.onHandleError}>Okay</Button>
                     </footer>
                 </Card>
             </div>
