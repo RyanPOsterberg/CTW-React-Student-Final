@@ -21,11 +21,9 @@ function App() {
     const userIndex = usersList.findIndex(user =>
       user.id === userId
     );
-    console.log(userIndex);
-    setUsersList((users) => {
-      users[userIndex].active = false;
-      return users;
-    });
+    const updatedUsers = [...usersList];
+    updatedUsers[userIndex].active = false;
+    setUsersList(updatedUsers);
   }
 
   return (

@@ -1,12 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Card from '../ui/Card.js'
 import Button from '../ui/Button.js'
 import './UsersList.css'
 
 const UsersList = props => {
-    useEffect(() => {
-        console.log("value of users changed");
-    }, [props.users]);
     
     let activeUsers = props.users.filter(user =>
         user.active === true
