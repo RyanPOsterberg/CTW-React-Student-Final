@@ -9,17 +9,29 @@ function App() {
     const newUser = {
       name: username,
       age: age,
-      id: Math.random().toString()
+      id: Math.random().toString(),
+      active: true
     };
     setUsersList((prevUsersList) => {
       return [...prevUsersList, newUser];
-    })
+    });
+  }
+
+  function deleteUserHandler(userId) {
+    const userIndex = usersList.findIndex(user =>
+      user.id === userId
+    );
+    console.log(userIndex);
+    setUsersList((users) => {
+      users[userIndex].active = false;
+      return users;
+    });
   }
 
   return (
     <div>
       <AddUser onAddUser={addUserHandler}></AddUser>
-      <UsersList users={usersList}></UsersList>
+      <UsersList users={usersList} deleteUser={deleteUserHandler}></UsersList>
     </div>
   );
 }
