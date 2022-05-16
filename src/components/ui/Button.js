@@ -7,6 +7,7 @@ const Button = props => {
             <button 
                 type={props.type || "button"}
                 onClick={props.clickHandler}
+                value={props.value}
             >
                 {props.children}
             </button>
