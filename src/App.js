@@ -9,18 +9,6 @@ const addUser = ({ user }) => mockRequest({ returnValue: user, error: false });
 function App() {
   const [usersList, setUsersList] = useState([]);
 
-  // function addUserHandler(username, age) {
-  //   const newUser = {
-  //     name: username,
-  //     age: age,
-  //     id: Math.random().toString(),
-  //     active: true
-  //   };
-  //   setUsersList((prevUsersList) => {
-  //     return [...prevUsersList, newUser];
-  //   });
-  // }
-
   async function addUserHandler(username, age) {
     const newUser = {
       name: username,
@@ -33,7 +21,7 @@ function App() {
     });
 
     try {
-      const response = await addUser({ newUser });
+      const response = await addUser({ user: newUser });
       console.log("Response:", response);
     } catch (error) {
       console.log("Error");
